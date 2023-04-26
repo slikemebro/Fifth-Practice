@@ -1,0 +1,12 @@
+2023-04-26 18:33:47 DEBUG HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+2023-04-26 18:33:47 DEBUG HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+2023-04-26 18:36:19 INFO  Fill product time is = 151.637 seconds
+2023-04-26 18:36:19 INFO  rps is 0.05935226890534632
+2023-04-26 18:51:10 INFO  Fill product time is = 0.28700000000000003 seconds
+2023-04-26 18:51:10 INFO  rps is 31.3588850174216
+2023-04-26 18:51:11 DEBUG Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+2023-04-26 18:51:11 INFO  HV000001: Hibernate Validator 8.0.0.Final
+2023-04-26 18:51:11 DEBUG Trying to load META-INF/validation.xml for XML based Validator configuration.
+2023-04-26 18:51:11 DEBUG Trying to load META-INF/validation.xml via TCCL
+2023-04-26 18:51:11 DEBUG Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+2023-04-26 18:51:11 DEBUG No META-INF/validation.xml found. Using annotation based configuration only.

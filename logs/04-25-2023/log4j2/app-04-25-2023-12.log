@@ -1,0 +1,9 @@
+2023-04-25 16:35:19 DEBUG HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
+2023-04-25 16:35:19 DEBUG HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+2023-04-25 16:35:19 DEBUG HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+2023-04-25 16:35:19 DEBUG HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+2023-04-25 16:37:54 INFO  Connected to database.
+2023-04-25 16:37:58 DEBUG Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+2023-04-25 16:37:58 INFO  HV000001: Hibernate Validator 8.0.0.Final
+2023-04-25 16:37:58 DEBUG Trying to load META-INF/validation.xml for XML based Validator configuration.
+2023-04-25 16:37:58 DEBUG Trying to load META-INF/validation.xml via TCCL

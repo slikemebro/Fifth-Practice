@@ -1,0 +1,7 @@
+2023-04-26 19:26:38 DEBUG HV000234: Using org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator as ValidatorFactory-scoped message interpolator.
+2023-04-26 19:26:38 DEBUG HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
+2023-04-26 19:26:38 DEBUG HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+2023-04-26 19:26:38 DEBUG HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+2023-04-26 19:26:38 DEBUG HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+2023-04-26 19:29:07 INFO  Fill product time is = 148.059 seconds
+2023-04-26 19:29:07 INFO  rps is 2255.8574622278957

@@ -1,0 +1,13 @@
+2023-04-26 19:25:45 INFO  Fill product time is = 245.284 seconds
+2023-04-26 19:25:45 INFO  rps is 0.036692160923664
+2023-04-26 19:26:38 INFO  Fill product time is = 0.331 seconds
+2023-04-26 19:26:38 INFO  rps is 27.190332326283986
+2023-04-26 19:26:38 DEBUG Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+2023-04-26 19:26:38 INFO  HV000001: Hibernate Validator 8.0.0.Final
+2023-04-26 19:26:38 DEBUG Trying to load META-INF/validation.xml for XML based Validator configuration.
+2023-04-26 19:26:38 DEBUG Trying to load META-INF/validation.xml via TCCL
+2023-04-26 19:26:38 DEBUG Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+2023-04-26 19:26:38 DEBUG No META-INF/validation.xml found. Using annotation based configuration only.
+2023-04-26 19:26:38 DEBUG Cannot find jakarta.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+2023-04-26 19:26:38 DEBUG Loaded expression factory via original TCCL
+2023-04-26 19:26:38 DEBUG HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
