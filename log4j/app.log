@@ -1,7 +1,13 @@
-2023-04-26 19:26:38 DEBUG HV000234: Using org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator as ValidatorFactory-scoped message interpolator.
-2023-04-26 19:26:38 DEBUG HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
-2023-04-26 19:26:38 DEBUG HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
-2023-04-26 19:26:38 DEBUG HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
-2023-04-26 19:26:38 DEBUG HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
-2023-04-26 19:29:07 INFO  Fill product time is = 148.059 seconds
-2023-04-26 19:29:07 INFO  rps is 2255.8574622278957
+2023-04-30 19:46:59 INFO  find address time is = 0.015 seconds
+2023-04-30 19:47:25 INFO  address is Kyiv str. Kyivska, 253
+2023-04-30 19:52:06 INFO  Connection to db created
+2023-04-30 19:52:06 INFO  Loaded properties file
+2023-04-30 19:52:06 INFO  Getting properties
+2023-04-30 19:52:06 INFO  Got count_of_documents from properties
+2023-04-30 19:52:13 INFO  time started
+2023-04-30 19:55:46 INFO  Fill product time is = 212.89600000000002 seconds
+2023-04-30 19:55:46 INFO  rps is 14091.387344055312
+2023-04-30 19:56:43 INFO  Count in table 3000000
+2023-04-30 19:56:43 INFO  time started
+2023-04-30 19:56:43 INFO  find address time is = 0.014 seconds
+2023-04-30 19:57:39 INFO  address is Kyiv Kiltseva doroga, 1-B
