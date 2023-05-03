@@ -19,7 +19,6 @@ import java.util.concurrent.TimeUnit;
 public class FillTable {
 
     private static final Logger logger = LogManager.getLogger(FillTable.class);
-    public static final int INSERT_PACK = 100000;
     public static final int BACH_SIZE = 10000;
     public static final int COUNT_OF_THREAD_POLL = 30;
 
@@ -44,10 +43,6 @@ public class FillTable {
      */
     public void fastFill(MongoCollection<Document> collection, List<Document> documents) {
         collection.drop();
-
-//        collection.createIndex(Indexes.ascending("type", "address"));
-
-
 
         StopWatch watch = StopWatch.createStarted();
         logger.info("time started");
