@@ -10,9 +10,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.bson.Document;
 
-/**
- * Hello world!
- */
 public class App {
 
     private static final Logger logger = LogManager.getLogger(App.class);
@@ -40,7 +37,7 @@ public class App {
         String productType = System.getProperty(PRODUCT_TYPE);
         logger.info("Get system property");
 
-        if (productType == null){
+        if (productType == null) {
             logger.info("Got property was null. It will be set automatically Food");
             productType = "Food";
         }

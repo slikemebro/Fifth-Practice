@@ -11,7 +11,7 @@ import java.util.List;
 
 public class MyCSVReader {
 
-    public List<String[]> readCSVFile(String nameOfFile){
+    public List<String[]> readCSVFile(String nameOfFile) {
         try {
             CSVReader reader = new CSVReaderBuilder((new FileReader(nameOfFile))).build();
             return reader.readAll();
