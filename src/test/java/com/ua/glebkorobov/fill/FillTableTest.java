@@ -8,8 +8,8 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
+import static org.mockito.ArgumentMatchers.anyList;
+import static org.mockito.Mockito.*;
 
 class FillTableTest {
 
@@ -27,7 +27,9 @@ class FillTableTest {
 
         fillTable.fastFill(mockCollection, documents);
 
-        verify(mockCollection).drop();
+        verify(mockCollection, times(1)).drop();
+        verify(mockCollection).insertMany(anyList());
+        verify(mockCollection, times(1)).countDocuments();
     }
 
     @Test

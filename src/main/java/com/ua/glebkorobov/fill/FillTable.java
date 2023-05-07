@@ -95,19 +95,19 @@ public class FillTable {
                     stores.get(random.nextInt(storeSize))[0]
             );
 
-            if (validator.validate(product).isEmpty()){
+//            if (validator.validate(product).isEmpty()){
                 Document document = new Document("name", product.getName())
                         .append("type", product.getType())
                         .append("address", product.getAddress())
                         .append("quantity", product.getQuantity());
                 documents.add(document);
                 i++;
-            }else {
-                inValidCounter++;
-            }
+//            }else {
+//                inValidCounter++;
+//            }
         }
 
-        logger.info("Invalid porducts {}", inValidCounter);
+//        logger.info("Invalid porducts {}", inValidCounter);
         return documents;
     }
 }
