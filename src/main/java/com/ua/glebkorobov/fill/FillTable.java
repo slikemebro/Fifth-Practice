@@ -19,7 +19,7 @@ import java.util.concurrent.TimeUnit;
 public class FillTable {
 
     private static final Logger logger = LogManager.getLogger(FillTable.class);
-    public static final int BACH_SIZE = 10000;
+    public static final int BACH_SIZE = 100000;
     public static final int COUNT_OF_THREAD_POLL = 30;
 
 
@@ -38,8 +38,6 @@ public class FillTable {
      * 2023-04-30 18:44:26 INFO  time started
      * 2023-04-30 18:48:31 INFO  Fill product time is = 245.191 seconds
      * 2023-04-30 18:48:31 INFO  rps is 12235.359372897048
-     * @param collection
-     * @param documents
      */
     public void fastFill(MongoCollection<Document> collection, List<Document> documents) {
         collection.drop();
