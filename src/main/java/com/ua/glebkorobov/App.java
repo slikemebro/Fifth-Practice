@@ -25,7 +25,7 @@ public class App {
 
         MongoClient mongoClient = MongoClients.create(URI);
         MongoDatabase database = mongoClient.getDatabase("data");
-        MongoCollection<Document> collection = database.getCollection("test");
+        MongoCollection<Document> collection = database.getCollection("products");
         logger.info("Connection to db created");
 
         GetProperty getProperty = new GetProperty("myProp.properties");
