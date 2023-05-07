@@ -31,12 +31,12 @@ public class FindAddress {
                         Aggregates.limit(1)
                 )
         );
-
+        String store = result.first().getString("_id");
+        watch.stop();
         double time = watch.getTime(TimeUnit.MILLISECONDS) * 0.001;
         logger.info("find address time is = {} seconds", time);
-        watch.stop();
 
-        logger.info("address is {}", result.first().get("_id"));
+        logger.info("address is {}", store);
 
         return result.first();
     }
