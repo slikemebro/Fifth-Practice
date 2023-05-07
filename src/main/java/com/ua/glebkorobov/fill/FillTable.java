@@ -2,6 +2,10 @@ package com.ua.glebkorobov.fill;
 
 import com.mongodb.client.MongoCollection;
 import com.ua.glebkorobov.MyCSVReader;
+import com.ua.glebkorobov.dto.Product;
+import jakarta.validation.Validation;
+import jakarta.validation.Validator;
+import jakarta.validation.ValidatorFactory;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.time.StopWatch;
 import org.apache.logging.log4j.LogManager;
@@ -19,7 +23,7 @@ import java.util.concurrent.TimeUnit;
 public class FillTable {
 
     private static final Logger logger = LogManager.getLogger(FillTable.class);
-    public static final int BACH_SIZE = 100000;
+    public static final int BACH_SIZE = 10000;
     public static final int COUNT_OF_THREAD_POLL = 30;
 
 
@@ -28,12 +32,12 @@ public class FillTable {
      * 2023-04-30 18:34:03 INFO  time started
      * 2023-04-30 18:37:22 INFO  Fill product time is = 199.15 seconds
      * 2023-04-30 18:37:22 INFO  rps is 15064.022093899071
-     *
+     * <p>
      * mongodb id with index
      * 2023-04-30 18:39:10 INFO  time started
      * 2023-04-30 18:43:01 INFO  Fill product time is = 231.303 seconds
      * 2023-04-30 18:43:01 INFO  rps is 12970.000389100012
-     *
+     * <p>
      * custom id without index
      * 2023-04-30 18:44:26 INFO  time started
      * 2023-04-30 18:48:31 INFO  Fill product time is = 245.191 seconds
@@ -67,8 +71,7 @@ public class FillTable {
     }
 
 
-
-    public List<Document> createDocumets(int countOfDocuments){
+    public List<Document> createDocumets(int countOfDocuments) {
         MyCSVReader reader = new MyCSVReader();
         List<String[]> types = reader.readCSVFile("tables/types.csv");
         List<String[]> stores = reader.readCSVFile("tables/stores.csv");
@@ -78,14 +81,33 @@ public class FillTable {
         int typeSize = types.size();
         int storeSize = stores.size();
 
+        ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
+        Validator validator = factory.getValidator();
+
+        int inValidCounter = 0;
+
         List<Document> documents = new ArrayList<>();
-        for (int i = 0; i < countOfDocuments; i++) {
-            Document document = new Document("name", RandomStringUtils.randomAlphabetic(2, 15))
-                    .append("type", types.get(random.nextInt(typeSize))[0])
-                    .append("address", stores.get(random.nextInt(storeSize))[0])
-                    .append("quantity", random.nextInt(300));
-            documents.add(document);
+        for (int i = 0; i < countOfDocuments; ) {
+            Product product = new Product(
+                    RandomStringUtils.randomAlphabetic(5, 16),
+                    types.get(random.nextInt(typeSize))[0],
+                    random.nextInt(300),
+                    stores.get(random.nextInt(storeSize))[0]
+            );
+
+            if (validator.validate(product).isEmpty()){
+                Document document = new Document("name", product.getName())
+                        .append("type", product.getType())
+                        .append("address", product.getAddress())
+                        .append("quantity", product.getQuantity());
+                documents.add(document);
+                i++;
+            }else {
+                inValidCounter++;
+            }
         }
+
+        logger.info("Invalid porducts {}", inValidCounter);
         return documents;
     }
 }
