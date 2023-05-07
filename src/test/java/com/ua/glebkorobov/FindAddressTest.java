@@ -36,7 +36,7 @@ class FindAddressTest {
     @Test
     void testFindStoreWithMaxQuantityByTypeWithError() {
         MongoCollection<Document> collection = mock(MongoCollection.class);
-        when(collection.aggregate(Mockito.anyList())).thenThrow(new RuntimeException("Test Exception"));
+        when(collection.aggregate(Mockito.anyList())).thenThrow(new RuntimeException());
         FindAddress findAddress = new FindAddress();
 
         assertThrows(RuntimeException.class,

@@ -27,22 +27,7 @@ public class FillTable {
     public static final int COUNT_OF_THREAD_POLL = 30;
 
 
-    /**
-     * mongodb id without index
-     * 2023-04-30 18:34:03 INFO  time started
-     * 2023-04-30 18:37:22 INFO  Fill product time is = 199.15 seconds
-     * 2023-04-30 18:37:22 INFO  rps is 15064.022093899071
-     * <p>
-     * mongodb id with index
-     * 2023-04-30 18:39:10 INFO  time started
-     * 2023-04-30 18:43:01 INFO  Fill product time is = 231.303 seconds
-     * 2023-04-30 18:43:01 INFO  rps is 12970.000389100012
-     * <p>
-     * custom id without index
-     * 2023-04-30 18:44:26 INFO  time started
-     * 2023-04-30 18:48:31 INFO  Fill product time is = 245.191 seconds
-     * 2023-04-30 18:48:31 INFO  rps is 12235.359372897048
-     */
+
     public void fastFill(MongoCollection<Document> collection, List<Document> documents) {
         collection.drop();
 
@@ -84,8 +69,6 @@ public class FillTable {
         ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
         Validator validator = factory.getValidator();
 
-        int inValidCounter = 0;
-
         List<Document> documents = new ArrayList<>();
         for (int i = 0; i < countOfDocuments; ) {
             Product product = new Product(
@@ -95,19 +78,15 @@ public class FillTable {
                     stores.get(random.nextInt(storeSize))[0]
             );
 
-//            if (validator.validate(product).isEmpty()){
+            if (validator.validate(product).isEmpty()) {
                 Document document = new Document("name", product.getName())
                         .append("type", product.getType())
                         .append("address", product.getAddress())
                         .append("quantity", product.getQuantity());
                 documents.add(document);
                 i++;
-//            }else {
-//                inValidCounter++;
-//            }
+            }
         }
-
-//        logger.info("Invalid porducts {}", inValidCounter);
         return documents;
     }
 }
